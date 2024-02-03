@@ -11,7 +11,7 @@ export class UserService {
   constructor(
     @InjectRepository(UserEntity)
     private readonly userRepository: Repository<UserEntity>,
-    @InjectRepository(UserEntity)
+    @InjectRepository(SubscriptionEntity)
     private readonly subscriptionRepository: Repository<SubscriptionEntity>,
   ) {}
 
@@ -65,7 +65,7 @@ export class UserService {
 
       if(!isSubscribed){
         const newSubscription = await this.subscriptionRepository.create(data)
-        await this.subscriptionRepository.save((newSubscription))
+        await this.subscriptionRepository.save(newSubscription)
         return true
       }
 

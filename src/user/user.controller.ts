@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, Param, Patch, Post, Put, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Param, Patch, Put, UsePipes, ValidationPipe } from '@nestjs/common';
 import { UserService } from './user.service';
 import { Auth } from 'src/auth/decorators/auth.decorator';
 import { CurrnetUser } from './user.decoration';
@@ -32,8 +32,8 @@ export class UserController {
   @HttpCode(200)
   @Patch('subscribe/:channelId')
   @Auth()
-  async subscribeToChannel(@CurrnetUser('id') id:number,@Param('channelId') channelId:string){
-    return this.userService.subscribe(id,+channelId)
+  async subscribeToChannel(@CurrnetUser('id') id:number, @Param('channelId') channelId:string,){
+    return this.userService.subscribe(id, +channelId)
   }
 
   @Get()
