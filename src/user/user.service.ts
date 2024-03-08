@@ -40,16 +40,12 @@ export class UserService {
         'Email занят'
       )
 
-      if(dto.password){
-        const salt = await genSalt(10)
-        user.password = await hash(dto.password,salt)
-      }
       
       user.email = dto.email
       user.name = dto.name
       user.description = dto.description
       user.avatarPath = dto.avatarPath
-
+      user.profileUrl = dto.profileUrl
       return this.userRepository.save(user)
       
     }

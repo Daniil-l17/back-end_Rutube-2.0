@@ -5,8 +5,6 @@ export class UserDto {
   email:string
 
 
-  password?:string
-
   @IsString()
   name:string
 
@@ -15,4 +13,7 @@ export class UserDto {
 
   @IsString()
   avatarPath:string
+
+  @IsString()
+  profileUrl:string
 }

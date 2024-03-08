@@ -14,6 +14,9 @@ export class UserEntity extends Base {
   @Column({default:''})
   name: string
 
+  @Column({default:''})
+  profileUrl: string
+
   @Column({default:false,name:'is_verified'})
   isVerified: boolean
 

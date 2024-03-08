@@ -34,7 +34,7 @@ export class VideoEntity extends Base {
   videoPath: string
 
   @Column({default:'',name:'thumbnail_path'})
-  thumbnailPath: string
+  thumbnaulPath: string
 
 
   @ManyToOne(() => UserEntity,user => user.videos)
